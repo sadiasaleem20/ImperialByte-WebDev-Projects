@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Mausam Check Kro</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+  </head>
+  <body class="dash-body">
+    <nav class="dash-nav">
+      <div class="brand">
+        <img class="brand-mark" src="./images/logo.png" /> Mausam Check Kro
+      </div>
+      <div class="dash-user">
+        <div class="who">
+          <div class="greet">Welcome back,</div>
+          <div class="name" id="welcomeText">User</div>
+        </div>
+        <button class="logout-pill" id="logoutBtn">Logout</button>
+      </div>
+    </nav>
+
+    <div class="dash-container">
+      <div id="msg"></div>
+
+      <div class="weather-hero" id="hero">
+        <div class="blob-field">
+          <div class="blob blob--1"></div>
+          <div class="blob blob--2"></div>
+        </div>
+
+        <div class="hero-top-row">
+          <div class="hero-place">
+            <div class="city" id="cityName">--</div>
+            <div class="meta">
+              <span id="dateText">--</span> &middot;
+              <span id="timeText">--</span>
+            </div>
+          </div>
+          <div class="hero-badges">
+            <button
+              class="refresh-btn"
+              id="refreshBtn"
+              title="Refresh this city's weather"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+                <path d="M21 4v6h-6" />
+              </svg>
+            </button>
+            <div class="hero-condition-badge" id="conditionBadge">--</div>
+          </div>
+        </div>
+
+        <div class="hero-main">
+          <div class="hero-temp" id="temp">--°</div>
+          <div>
+            <div class="hero-desc" id="description">--</div>
+            <div class="hero-desc-sub" id="feelsLikeText">--</div>
+          </div>
+
+          <div class="hero-stats-inline">
+            <div class="stat-mini">
+              <div class="val" id="humidity">--%</div>
+              <div class="lbl">Humidity</div>
+            </div>
+            <div class="stat-mini">
+              <div class="val" id="wind">-- km/h</div>
+              <div class="lbl">Wind</div>
+            </div>
+            <div class="stat-mini">
+              <div class="val" id="aqi">--</div>
+              <div class="lbl">Air Quality</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-sun-row">
+          <div class="sun-stat">
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2v6M4.2 10.2l1.4 1.4M2 18h2M20 18h2M18.4 11.6l1.4-1.4M12 18a5 5 0 0 0-5-5"
+              />
+              <path d="M2 22h20" />
+            </svg>
+            Sunrise <strong id="sunriseText">--</strong>
+          </div>
+          <div class="sun-stat">
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 10V4M4.2 8.2l1.4 1.4M2 18h2M20 18h2M18.4 9.6l1.4-1.4M12 18a5 5 0 0 0-5-5"
+              />
+              <path d="M2 22h20" />
+            </svg>
+            Sunset <strong id="sunsetText">--</strong>
+          </div>
+          <div class="updated-text">
+            Updated <span id="updatedAgo">just now</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>Your Cities</h3>
+        <span>Click a city to view it above</span>
+      </div>
+
+      <div class="city-grid" id="cityGrid"></div>
+
+      <div class="add-city-panel" id="addCityPanel">
+        <input
+          type="text"
+          id="newCityInput"
+          placeholder="e.g. Tokyo, Paris, New York..."
+        />
+        <button id="confirmAddCity">Add</button>
+      </div>
+    </div>
+
+    <script src="js/weather.js"></script>
+  </body>
+</html>

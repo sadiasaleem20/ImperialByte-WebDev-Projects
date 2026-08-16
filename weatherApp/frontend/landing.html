@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mausam Check Kro — Know Before The Sky Changes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+  </head>
+  <body>
+    <div class="sky-bg">
+      <div class="blob-field">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
+      <nav class="nav">
+        <div class="brand">
+          <img class="brand-mark" src="./images/logo.png" />
+          Mausam Check Kro
+        </div>
+        <div class="nav-links">
+          <a href="landing.html">Home</a>
+          <a href="#features">Features</a>
+          <a href="login.html">Log In</a>
+        </div>
+        <a href="signup.html" class="pill-btn pill-btn--solid">Get Started</a>
+        <button class="menu-icon" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-text">
+          <span class="eyebrow">Live Forecasts, Your Cities</span>
+          <h1>Know Before<br />The Sky <br />Changes.</h1>
+          <p class="lead">
+            Save the cities you actually care about and watch your dashboard
+            change with the weather — real temperatures, real skies, updated the
+            moment you open it.
+          </p>
+          <div class="hero-actions">
+            <a href="signup.html" class="pill-btn pill-btn--primary"
+              >Create Free Account</a
+            >
+            <a href="login.html" class="pill-btn pill-btn--text">Log In</a>
+          </div>
+          <div class="trust-row">
+            <span class="stars">★★★★★</span>
+            <span>Live weather for 10,000+ cities</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Consolidated weather summary card -->
+          <div class="weather-card-preview glass" id="showcaseCard">
+            <div class="wc-city">
+              <svg
+                class="wc-icon"
+                viewBox="0 0 24 24"
+                width="13"
+                height="13"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span id="wcCity">Loading...</span>
+            </div>
+            <div class="wc-condition">
+              <svg
+                class="wc-icon"
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path
+                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                />
+              </svg>
+              <span id="wcCondition">--</span>
+            </div>
+            <div class="wc-temp" id="wcTemp">--°</div>
+            <div class="wc-feels" id="wcFeels">--</div>
+            <div class="wc-hilo" id="wcHilo">--</div>
+            <div class="wc-divider"></div>
+            <div class="wc-extra">
+              <div>
+                <span
+                  ><svg
+                    class="wc-icon"
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                  >
+                    <path d="M12 2s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11Z" />
+                  </svg>
+                  Humidity</span
+                >
+                <strong id="wcHumidity">--</strong>
+              </div>
+              <div>
+                <span
+                  ><svg
+                    class="wc-icon"
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  >
+                    <path
+                      d="M2 8h11a3 3 0 1 0-3-3M2 16h15a3 3 0 1 1-3 3M2 12h18a3 3 0 1 0-3-3"
+                    />
+                  </svg>
+                  Wind</span
+                >
+                <strong id="wcWind">--</strong>
+              </div>
+              <div>
+                <span
+                  ><svg
+                    class="wc-icon"
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                  >
+                    <path d="M12 3v18M5 8l14 8M19 8 5 16" />
+                  </svg>
+                  Air Quality</span
+                >
+                <strong id="wcAqi">--</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sun + cloud illustration with depth layers -->
+          <div class="sun-cloud-wrap">
+            <div class="particle particle--1"></div>
+            <div class="particle particle--2"></div>
+            <div class="particle particle--3"></div>
+
+            <img
+              class="cloud-decor cloud-decor--1"
+              src="assets/images/cloud.png"
+              alt=""
+            />
+
+            <div class="cloud-shadow"></div>
+            <img class="cloud" src="assets/images/cloud.png" alt="" />
+            <div class="sun" id="sun"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="scroll-cue">
+        <a href="#features">
+          <span>↓</span>
+          <span>Explore Features</span>
+        </a>
+      </div>
+
+      <section class="features" id="features">
+        <div class="feature-card glass">
+          <div class="icon">🏙️</div>
+          <h3>Multi-city dashboard</h3>
+          <p>
+            Save every city that matters to you and switch between them
+            instantly, all from one clean dashboard.
+          </p>
+        </div>
+        <div class="feature-card glass">
+          <div class="icon">🌦️</div>
+          <h3>Live sky backgrounds</h3>
+          <p>
+            Your dashboard's colors shift with the real weather — rainy, sunny,
+            stormy, or snowy, at a glance.
+          </p>
+        </div>
+        <div class="feature-card glass">
+          <div class="icon">🔒</div>
+          <h3>Your account, your data</h3>
+          <p>
+            Sign up once, and your saved cities and preferences are ready every
+            time you log back in.
+          </p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        © 2026 Mausam Check Kro. Built for people who check the sky obsessively.
+      </footer>
+    </div>
+
+    <script>
+      // Generate sun rays around the .sun element
+      const sun = document.getElementById("sun");
+      const rayCount = 8;
+      for (let i = 0; i < rayCount; i++) {
+        const ray = document.createElement("div");
+        ray.className = "ray";
+        ray.style.transform = `translate(-50%,-50%) rotate(${(360 / rayCount) * i}deg) translateY(-88px)`;
+        sun.appendChild(ray);
+      }
+    </script>
+    <script src="./js/landing.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — Cafe Fika</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">Cafe Fika<span>.</span></a>
+        <a href="index.html" class="btn btn--text">← Back to menu</a>
+      </div>
+    </header>
+
+    <!-- CHECKOUT -->
+    <section class="checkout" id="checkout-view">
+      <div class="checkout__summary reveal">
+        <span class="tag">Your Order</span>
+        <h2 class="section__title2">Order Summary</h2>
+
+        <div class="summary-list" id="summary-list">
+          <!-- filled by checkout.js -->
+        </div>
+
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">Rs 0</span>
+        </div>
+        <div class="summary-line">
+          <span>Delivery</span>
+          <span id="summary-delivery">Rs 0</span>
+        </div>
+        <div class="summary-line summary-line--total">
+          <span>Total</span>
+          <span id="summary-total">Rs 0</span>
+        </div>
+      </div>
+
+      <div class="checkout__form reveal">
+        <span class="tag">Delivery details</span>
+        <h2 class="section__title2">Where should we send it?</h2>
+
+        <form id="checkout-form" novalidate>
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input type="text" id="name" required placeholder="Your name" />
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" required placeholder="03XX XXXXXXX" />
+          </div>
+
+          <div class="form-row">
+            <label for="address">Delivery address</label>
+            <textarea
+              id="address"
+              required
+              placeholder="House / street / area"
+            ></textarea>
+          </div>
+
+          <div class="form-row form-row--split">
+            <div>
+              <label for="city">City</label>
+              <input type="text" id="city" required placeholder="Lahore" />
+            </div>
+            <div>
+              <label for="postal">Postal code</label>
+              <input type="text" id="postal" placeholder="Optional" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Payment method</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked />
+                <span>Cash on Delivery</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card" />
+                <span>Card (demo only)</span>
+              </label>
+            </div>
+          </div>
+
+          <p class="form-error" id="form-error"></p>
+
+          <button type="submit" class="btn btn--solid checkout-submit">
+            Place Order
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION (hidden until order is placed) -->
+    <section class="confirmation d-none" id="confirmation-view">
+      <div class="confirmation__card">
+        <div class="confirmation__icon">✓</div>
+        <h2 class="section__title2">Order placed!</h2>
+        <p class="confirmation__order-id" id="order-id"></p>
+        <p class="confirmation__note">
+          Thanks<span id="confirmation-name"></span> — your order is confirmed.
+          This is a demo checkout, so nothing was actually charged or delivered.
+        </p>
+        <a href="index.html" class="btn btn--solid">Back to Cafe Fika</a>
+      </div>
+    </section>
+
+    <!-- EMPTY STATE (shown if cart is empty on load) -->
+    <section class="empty-cart d-none" id="empty-view">
+      <p>Your cart is empty — there's nothing to check out yet.</p>
+      <a href="index.html#coffee" class="btn btn--solid">Browse the menu</a>
+    </section>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>

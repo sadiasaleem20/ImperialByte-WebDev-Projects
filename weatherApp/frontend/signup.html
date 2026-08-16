@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up — Mausam Check Kro</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+  </head>
+  <body>
+    <div class="sky-bg">
+      <div class="blob-field">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
+      <nav class="nav">
+        <a href="landing.html" class="brand"
+          ><img class="brand-mark" src="./images/logo.png" /> Mausam Check
+          Kro</a
+        >
+        <a href="login.html" class="pill-btn pill-btn--ghost"
+          >Already have an account?</a
+        >
+      </nav>
+
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <h2>Create Account</h2>
+          <p class="subtitle">Sign up to build your own weather dashboard</p>
+
+          <form id="signupForm">
+            <div class="field">
+              <label>Username</label>
+              <input type="text" id="username" required />
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" id="password" required minlength="6" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label>Country</label>
+                <select id="country" required>
+                  <option value="">Loading countries...</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>City</label>
+                <select id="city" required>
+                  <option value="">Select your city</option>
+                </select>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="pill-btn pill-btn--solid pill-btn--block"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <div id="msg"></div>
+
+          <p class="auth-switch">
+            Already have an account? <a href="login.html">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/signup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In — Mausam Check Kro</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+  </head>
+  <body>
+    <div class="sky-bg">
+      <div class="blob-field">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
+      <nav class="nav">
+        <a href="landing.html" class="brand"
+          ><img class="brand-mark" src="./images/logo.png" /> Mausam Check
+          Kro</a
+        >
+        <a href="signup.html" class="pill-btn pill-btn--ghost"
+          >New here? Sign Up</a
+        >
+      </nav>
+
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <h2>Welcome Back</h2>
+          <p class="subtitle">Log in to see your saved cities' weather</p>
+
+          <form id="loginForm">
+            <div class="field">
+              <label>Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" id="password" required />
+            </div>
+            <button
+              type="submit"
+              class="pill-btn pill-btn--solid pill-btn--block"
+            >
+              Log In
+            </button>
+          </form>
+
+          <div id="msg"></div>
+
+          <p class="auth-switch">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

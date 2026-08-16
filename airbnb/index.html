@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb | Vacation rental, cabins, condos, houses</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header id="mainHeader">
+      <div class="internship-credit">
+        Developed during my Web Development Internship at
+        <span class="company-name">Imperial Byte</span>
+      </div>
+      <div class="full-header" id="fullHeader">
+        <div class="wrap header-inner">
+          <div class="logo">
+            <img src="assets/airbnblogo.png" class="tab-icon logo" />
+          </div>
+
+          <nav class="tab-nav">
+            <a href="#" class="tab-item active">
+              <img src="assets/homeicon.jfif" alt="Homes" class="tab-icon" />
+              <span>Homes</span>
+            </a>
+            <a href="#" class="tab-item">
+              <img
+                src="assets/hotairballonicon.jfif"
+                alt="Experiences"
+                class="tab-icon"
+              />
+              <span class="badge-new">NEW</span>
+              <span>Experiences</span>
+            </a>
+            <a href="#" class="tab-item">
+              <img src="assets/bellicon2.jpg" alt="Services" class="tab-icon" />
+              <span class="badge-new">NEW</span>
+              <span>Services</span>
+            </a>
+          </nav>
+
+          <div class="header-right">
+            <a href="#" class="host-link">Become a host</a>
+            <button class="icon-btn" aria-label="Language">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"
+                />
+              </svg>
+            </button>
+            <button class="icon-btn" aria-label="Menu">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="2"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <form class="search-pill" id="searchForm">
+            <div class="seg">
+              <span class="label">Where</span>
+              <input
+                type="text"
+                id="whereInput"
+                placeholder="Search destinations"
+              />
+            </div>
+            <div class="seg">
+              <span class="label">When</span>
+              <input type="text" id="whenInput" placeholder="Add dates" />
+            </div>
+            <div class="seg" style="border-right: none">
+              <span class="label">Who</span>
+              <input type="text" id="whoInput" placeholder="Add guests" />
+            </div>
+            <button type="submit" class="go" aria-label="Search">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                />
+                <path
+                  d="M20 20l-3.4-3.4"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== COMPACT HEADER (shown on scroll) ===== -->
+      <div class="compact-header" id="compactHeader">
+        <div class="wrap compact-inner">
+          <div class="logo">Airbnb</div>
+
+          <button class="compact-pill" id="compactPillBtn">
+            <img src="assets/homeicon.png" alt="" class="compact-home-icon" />
+            <span class="c-seg">Anywhere</span>
+            <span class="c-divider"></span>
+            <span class="c-seg">Anytime</span>
+            <span class="c-divider"></span>
+            <span class="c-seg">Add guests</span>
+            <span class="go small">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                />
+                <path
+                  d="M20 20l-3.4-3.4"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+          </button>
+
+          <div class="header-right">
+            <a href="#" class="host-link">Become a host</a>
+            <button class="icon-btn" aria-label="Language">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"
+                />
+              </svg>
+            </button>
+            <button class="icon-btn" aria-label="Menu">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="2"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="carousel-head">
+        <h2 class="carousel-title">
+          Popular homes in Islamabad
+          <button class="arrow-round" id="titleArrow" aria-label="See all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
+        </h2>
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="carousel-track" id="grid"></div>
+    </main>
+
+    <section class="inspiration-section">
+      <div class="wrap">
+        <h2 class="inspiration-title">Inspiration for future getaways</h2>
+        <div class="inspiration-tabs" id="inspirationTabs">
+          <button class="insp-tab active" data-tab="popular">Popular</button>
+          <button class="insp-tab" data-tab="arts">Arts & culture</button>
+          <button class="insp-tab" data-tab="beach">Beach</button>
+          <button class="insp-tab" data-tab="mountains">Mountains</button>
+          <button class="insp-tab" data-tab="outdoors">Outdoors</button>
+          <button class="insp-tab" data-tab="things">Things to do</button>
+          <button class="insp-tab" data-tab="tips">
+            Travel tips & inspiration
+          </button>
+          <button class="insp-tab" data-tab="friendly">
+            Stay-friendly apartments
+          </button>
+        </div>
+        <div class="row insp-grid" id="inspGrid">
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Wilmington</span>
+            <span class="type">House rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Key West</span>
+            <span class="type">Cottage rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Galveston</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Detroit</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Albuquerque</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Broken Bow</span>
+            <span class="type">Cabin rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Amsterdam</span>
+            <span class="type">Condo rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Portland</span>
+            <span class="type">Cabin rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Minneapolis</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Cincinnati</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Charlotte</span>
+            <span class="type">Condo rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Tampa</span>
+            <span class="type">Villa rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Brooklyn</span>
+            <span class="type">Condo rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Athens</span>
+            <span class="type">Villa rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Cleveland</span>
+            <span class="type">Apartment rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Maui</span>
+            <span class="type">Vacation rentals</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 insp-item">
+            <span class="city">Oahu</span>
+            <span class="type">House rentals</span>
+          </div>
+          <div
+            class="col-6 col-md-4 col-lg-2 insp-item show-more-item"
+            id="showMoreCell"
+          >
+            <button type="button" id="showMoreBtn">
+              Show more
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="row">
+          <div class="col-6 col-md-4">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Get help with a safety issue</a></li>
+              <li><a href="#">AirCover</a></li>
+              <li><a href="#">Travel insurance</a></li>
+              <li><a href="#">Anti-discrimination</a></li>
+              <li><a href="#">Disability support</a></li>
+              <li><a href="#">Cancellation options</a></li>
+              <li><a href="#">Report a neighborhood concern</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4">
+            <h4>Hosting</h4>
+            <ul>
+              <li><a href="#">Airbnb your home</a></li>
+              <li><a href="#">Airbnb your experience</a></li>
+              <li><a href="#">Airbnb your service</a></li>
+              <li><a href="#">AirCover for Hosts</a></li>
+              <li><a href="#">Hosting resources</a></li>
+              <li><a href="#">Community forum</a></li>
+              <li><a href="#">Hosting responsibly</a></li>
+              <li><a href="#">Airbnb-friendly apartments</a></li>
+              <li><a href="#">Join a free hosting class</a></li>
+              <li><a href="#">Find a co-host</a></li>
+              <li><a href="#">Refer a host</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4">
+            <h4>Airbnb</h4>
+            <ul>
+              <li><a href="#">2026 summer release</a></li>
+              <li><a href="#">Newsroom</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Gift cards</a></li>
+              <li><a href="#">Emergency stays program</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <div class="left">
+            <a>© 2026 Airbnb</a>
+            <span>·</span>
+            <a href="#">Privacy</a>
+            <span>·</span>
+            <a href="#">Terms</a>
+          </div>
+          <div class="right">
+            <span class="lang">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#222"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18" />
+              </svg>
+              English (US)
+            </span>
+            <span>$ USD</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap bundle (includes Popper) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

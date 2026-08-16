@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAFE FIKA — Coffee &amp; Bakery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav__inner">
+        <a href="#top" class="nav__logo">CAFE FIKA<span>.</span></a>
+
+        <nav class="nav__links">
+          <a href="#coffee">Coffee</a>
+          <a href="#bakery">Bakery</a>
+          <a href="#about">About</a>
+          <a href="#visit">Visit</a>
+        </nav>
+
+        <button class="cart-btn" id="cart-toggle" aria-label="Open cart">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            />
+          </svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CART PANEL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-panel" id="cart-panel">
+      <div class="cart-panel__head">
+        <h3>Your Order</h3>
+        <button id="cart-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-panel__items" id="cart-items">
+        <p class="cart-empty" id="cart-empty">
+          Your cart is empty. Add something warm.
+        </p>
+      </div>
+      <div class="cart-panel__footer">
+        <div class="cart-total">
+          <span>Subtotal</span>
+          <span id="cart-total">Rs 0</span>
+        </div>
+        <button class="btn btn--solid cart-checkout" id="cart-checkout">
+          Checkout
+        </button>
+      </div>
+    </aside>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__text">
+        <p class="eyebrow">Fresh roast · Fresh bake · Every day</p>
+        <h1 class="hero__title">
+          Coffee that wakes you up.<br /><em>Bakes that keep you there.</em>
+        </h1>
+        <p class="hero__sub">
+          Cafe Fika pairs small-batch coffee with a bakery counter baked fresh
+          every morning — sandwiches, croissants, and cake slices, made to go
+          with whatever you're drinking.
+        </p>
+        <div class="hero__actions">
+          <a href="#coffee" class="btn btn--solid">Order Coffee</a>
+          <a href="#bakery" class="btn btn--text">See the Bakery →</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img
+          src="images/heroimg.jfif"
+          alt="Cup of coffee at Cafe Fika"
+          class="hero__img"
+        />
+        <div class="board">
+          <p class="board__label">Today's Board</p>
+          <p class="board__item">Iced Latte and Matcha</p>
+          <p class="board__price">In just Rs 1150</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COFFEE MENU -->
+    <section class="menu" id="coffee">
+      <span class="tag tag--center">Coffee</span>
+      <h2 class="section__title">Brewed to order, every cup.</h2>
+
+      <div class="menu__grid">
+        <div
+          class="card"
+          data-id="Caramel Latte"
+          data-name="Caramel Latte"
+          data-price="650"
+        >
+          <img
+            src="images/caramellatte.jfif"
+            alt="caramellatte"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Caramel Latte</h3>
+            <p>Espresso Shot, Caramel Syrup, Steamed Milk.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 650</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="Spanish Iced Latte"
+          data-name="Spanish Iced Latte"
+          data-price="750"
+        >
+          <img
+            src="images/spanishicedlatte.jpg"
+            alt="Spanish Iced Latte"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Spanish Iced Latte</h3>
+            <p>Espresso Shot, Vanilla Syrup, Condense Milk & Ice.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 750</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="Hazelnut Iced Latte"
+          data-name="Hazelnut Iced Latte"
+          data-price="750"
+        >
+          <img
+            src="images/hazelnutlatte.jpg"
+            alt="Hazelnut Iced Latte"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Hazelnut Iced Latte</h3>
+            <p>Espresso Shots, Milk, Hazelnut Syrup, Ice.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 750</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="Berry Strong Protein Smoothie"
+          data-name="Berry Strong Protein Smoothie"
+          data-price="550"
+        >
+          <img
+            src="images/berry.jpg"
+            alt="Berry Strong Protein Smoothie"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Berry Strong Protein Smoothie</h3>
+            <p>
+              Milk, yogurt, strawberry, blueberry, blackberry, raspberry, date.
+            </p>
+            <div class="card__row">
+              <span class="card__price">Rs 550</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAKERY MENU -->
+    <section class="menu menu--alt" id="bakery">
+      <span class="tag tag--center">Bakery</span>
+      <h2 class="section__title">Baked fresh every morning.</h2>
+
+      <div class="menu__grid">
+        <div
+          class="card"
+          data-id="sandwich"
+          data-name="Chicken Sandwich"
+          data-price="750"
+        >
+          <img
+            src="images/sandwich.jpg"
+            alt="Chicken sandwich"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Chicken Sandwich</h3>
+            <p>Grilled chicken, herb mayo, sourdough toast.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 750</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="croissant"
+          data-name="Butter Croissant"
+          data-price="400"
+        >
+          <img
+            src="images/croissant.jpg"
+            alt="Butter croissant"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Butter Croissant</h3>
+            <p>Laminated dough, baked golden every morning.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 400</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="cake-slice"
+          data-name="Chocolate Cake Slice"
+          data-price="550"
+        >
+          <img
+            src="images/cake.jpg"
+            alt="Slice of chocolate cake"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Chocolate Cake Slice</h3>
+            <p>Dark chocolate sponge, ganache, sea salt.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 550</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          data-id="muffin"
+          data-name="Blueberry Muffin"
+          data-price="380"
+        >
+          <img
+            src="images/muffin.jpg"
+            alt="Blueberry muffin"
+            class="card__img"
+          />
+          <div class="card__body">
+            <h3>Blueberry Muffin</h3>
+            <p>Whole blueberries, crumb topping, soft center.</p>
+            <div class="card__row">
+              <span class="card__price">Rs 380</span>
+              <button class="btn btn--add add-to-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / WHY Cafe Fika -->
+    <section class="about" id="about">
+      <div class="about__grid">
+        <div class="feature reveal">
+          <span class="feature__icon">☕</span>
+          <h3>Roasted Weekly</h3>
+          <p>
+            We rotate origins every week so the coffee on the shelf is never
+            more than a few days old.
+          </p>
+        </div>
+        <div class="feature reveal">
+          <span class="feature__icon">🥐</span>
+          <h3>Baked Daily</h3>
+          <p>
+            Everything on the bakery counter is made that same morning — nothing
+            frozen, nothing held over.
+          </p>
+        </div>
+        <div class="feature reveal">
+          <span class="feature__icon">🌿</span>
+          <h3>Low-Waste Packaging</h3>
+          <p>
+            Compostable cups, paper bakery bags, and a discount when you bring
+            your own cup.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="notes">
+      <span class="tag tag--center">What people say</span>
+      <h2 class="section__title">A regular's-morning kind of place</h2>
+
+      <div class="notes__grid">
+        <blockquote class="note reveal">
+          <p>
+            "Their cold brew is the only one in the city that doesn't taste
+            burnt. The croissant next to it doesn't hurt either."
+          </p>
+          <cite>— Hina, regular</cite>
+        </blockquote>
+        <blockquote class="note reveal">
+          <p>
+            "I come for the cappuccino, I stay for the chicken sandwich.
+            Genuinely order both every time."
+          </p>
+          <cite>— Ahmed</cite>
+        </blockquote>
+        <blockquote class="note reveal">
+          <p>
+            "Good coffee shops are common. Good coffee shops with a bakery
+            that's actually fresh are rare."
+          </p>
+          <cite>— Zara</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit">
+      <div class="visit__info reveal">
+        <span class="tag">Visit us</span>
+        <h2 class="section__title2">Come in, sit down, stay a while.</h2>
+        <ul class="visit__list">
+          <li>
+            <strong>Address</strong><span>12-C Gulberg Boulevard, Lahore</span>
+          </li>
+          <li>
+            <strong>Hours</strong><span>Mon–Sat, 8:00 AM – 10:00 PM</span>
+          </li>
+          <li><strong>Phone</strong><span>+92 300 0000000</span></li>
+        </ul>
+        <a
+          href="https://maps.google.com"
+          target="_blank"
+          rel="noopener"
+          class="btn btn--outline"
+          >Get Directions</a
+        >
+      </div>
+      <div class="visit__map reveal">
+        <iframe
+          title="Cafe Fika location map"
+          src="https://maps.google.com/maps?q=Gulberg%20Lahore&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="nav__logo">Cafe Fika<span>.</span></p>
+          <p class="footer__note">Coffee roasted weekly. Bakery baked daily.</p>
+        </div>
+
+        <form class="footer__form" id="newsletter-form">
+          <label for="newsletter-email">Get our weekly specials</label>
+          <div class="footer__form-row">
+            <input
+              type="email"
+              id="newsletter-email"
+              placeholder="you@email.com"
+              required
+            />
+            <button type="submit" class="btn btn--solid">Subscribe</button>
+          </div>
+          <p class="footer__form-msg" id="newsletter-msg"></p>
+        </form>
+
+        <div class="footer__links">
+          <a href="#coffee">Coffee</a>
+          <a href="#bakery">Bakery</a>
+          <a href="#about">About</a>
+          <a href="#visit">Visit</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

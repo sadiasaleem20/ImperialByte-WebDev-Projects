@@ -1,0 +1,145 @@
+:root {
+  --paper: #faf7f1;
+  --ink: #2b2b2b;
+  --brand: #2f6f62;
+  --brand-light: #e7f2ef;
+  --accent: #e8a33d;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+}
+.brand-font {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---- note colors (only bit of "custom design" the grid needs) ---- */
+.note-default {
+  background: #ffffff;
+}
+.note-coral {
+  background: #f7a8a0;
+}
+.note-peach {
+  background: #f8c990;
+}
+.note-sand {
+  background: #f7e399;
+}
+.note-mint {
+  background: #cfe8b0;
+}
+.note-sage {
+  background: #aee6d3;
+}
+.note-fog {
+  background: #c9e7f2;
+}
+.note-storm {
+  background: #b7cbee;
+}
+.note-dusk {
+  background: #d7beea;
+}
+.note-blossom {
+  background: #f3cfe0;
+}
+.note-clay {
+  background: #e3c9ac;
+}
+
+.swatch {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: inline-block;
+}
+.swatch.active {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* masonry via CSS columns — the one layout trick Bootstrap's grid can't give us for free */
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+@media (min-width: 576px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+@media (min-width: 900px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+@media (min-width: 1300px) {
+  .masonry {
+    column-count: 4;
+  }
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.note-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.15s ease;
+}
+.note-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.note-toolbar {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.note-card:hover .note-toolbar,
+.note-card:focus-within .note-toolbar {
+  opacity: 1;
+}
+
+.pin-badge {
+  transform: rotate(-25deg);
+}
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--ink);
+  opacity: 0.65;
+}
+.icon-btn:hover {
+  opacity: 1;
+  color: var(--brand);
+}
+
+.sidebar .nav-link {
+  color: var(--ink);
+  border-radius: 0 20px 20px 0;
+}
+.sidebar .nav-link.active {
+  background: var(--brand-light);
+  color: var(--brand);
+  font-weight: 600;
+}
+.sidebar .nav-link:hover:not(.active) {
+  background: #f1f1f1;
+}
+
+.composer {
+  max-width: 600px;
+}
+.composer textarea {
+  resize: none;
+}
+
+.navbar-brand i {
+  color: var(--accent);
+}
+::placeholder {
+  color: #8a8a8a;
+}

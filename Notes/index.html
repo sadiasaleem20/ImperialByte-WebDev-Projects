@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes — Make Quick Notes</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand bg-white border-bottom sticky-top px-3">
+      <button
+        class="btn btn-light d-md-none me-2"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarOffcanvas"
+      >
+        <i class="bi bi-list fs-5"></i>
+      </button>
+      <a class="navbar-brand brand-font fw-bold" href="#">
+        <i class="bi bi-lightbulb-fill"></i> Notes
+      </a>
+      <div
+        class="mx-auto d-none d-sm-block"
+        style="width: 100%; max-width: 600px"
+      >
+        <div class="input-group">
+          <span class="input-group-text bg-light border-0"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            id="searchInput"
+            type="text"
+            class="form-control bg-light border-0"
+            placeholder="Search your notes"
+          />
+        </div>
+      </div>
+      <div
+        class="ms-auto rounded-circle bg-brand d-flex align-items-center justify-content-center text-white fw-semibold"
+        style="width: 36px; height: 36px; background: var(--brand)"
+      >
+        S
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- ============ SIDEBAR (desktop) ============ -->
+        <div class="col-md-2 d-none d-md-block sidebar pt-4">
+          <ul class="nav nav-pills flex-column gap-1" id="viewNav">
+            <li class="nav-item">
+              <a
+                class="nav-link active d-flex align-items-center gap-2 px-3 py-2"
+                href="#"
+                data-view="notes"
+              >
+                <i class="bi bi-lightbulb"></i> Notes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex align-items-center gap-2 px-3 py-2"
+                href="#"
+                data-view="archive"
+              >
+                <i class="bi bi-archive"></i> Archive
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex align-items-center gap-2 px-3 py-2"
+                href="#"
+                data-view="trash"
+              >
+                <i class="bi bi-trash"></i> Trash
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ SIDEBAR (mobile offcanvas) ============ -->
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="sidebarOffcanvas"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title brand-font">Notely</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column gap-1" id="viewNavMobile">
+              <li class="nav-item">
+                <a
+                  class="nav-link active d-flex align-items-center gap-2 px-3 py-2"
+                  href="#"
+                  data-view="notes"
+                  ><i class="bi bi-lightbulb"></i> Notes</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex align-items-center gap-2 px-3 py-2"
+                  href="#"
+                  data-view="archive"
+                  ><i class="bi bi-archive"></i> Archive</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex align-items-center gap-2 px-3 py-2"
+                  href="#"
+                  data-view="trash"
+                  ><i class="bi bi-trash"></i> Trash</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ============ MAIN ============ -->
+        <div class="col-md-10 py-4">
+          <!-- search box for mobile -->
+          <div class="input-group mb-3 d-sm-none">
+            <span class="input-group-text bg-light border-0"
+              ><i class="bi bi-search"></i
+            ></span>
+            <input
+              id="searchInputMobile"
+              type="text"
+              class="form-control bg-light border-0"
+              placeholder="Search your notes"
+            />
+          </div>
+
+          <!-- composer, only shown on the Notes view -->
+          <div id="composerWrap" class="composer mx-auto mb-5">
+            <div id="composerCard" class="card shadow-sm">
+              <div class="card-body pb-2">
+                <input
+                  id="composerTitle"
+                  type="text"
+                  class="form-control border-0 fw-semibold mb-2 d-none"
+                  placeholder="Title"
+                  style="background: transparent"
+                />
+                <textarea
+                  id="composerText"
+                  class="form-control border-0 p-0"
+                  style="background: transparent"
+                  rows="1"
+                  placeholder="Take a note..."
+                ></textarea>
+                <div id="composerChecklist" class="d-none"></div>
+              </div>
+              <div
+                id="composerToolbar"
+                class="card-footer bg-transparent border-0 pt-0 d-none justify-content-between align-items-center"
+              >
+                <div class="d-flex gap-1">
+                  <button
+                    class="icon-btn btn btn-sm"
+                    title="Toggle checklist"
+                    onclick="toggleComposerChecklist()"
+                  >
+                    <i class="bi bi-check2-square fs-6"></i>
+                  </button>
+                  <div class="dropdown">
+                    <button
+                      class="icon-btn btn btn-sm"
+                      data-bs-toggle="dropdown"
+                      title="Background options"
+                    >
+                      <i class="bi bi-palette fs-6"></i>
+                    </button>
+                    <div
+                      class="dropdown-menu p-2 d-flex flex-wrap gap-2"
+                      style="width: 220px"
+                      id="composerPalette"
+                    ></div>
+                  </div>
+                  <button
+                    class="icon-btn btn btn-sm"
+                    id="composerPinBtn"
+                    title="Pin note"
+                    onclick="
+                      composerState.pinned = !composerState.pinned;
+                      renderComposerToolbarState();
+                    "
+                  >
+                    <i class="bi bi-pin fs-6"></i>
+                  </button>
+                </div>
+                <button class="btn btn-sm btn-light" onclick="closeComposer()">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- section labels -->
+          <div
+            id="pinnedLabel"
+            class="text-uppercase text-muted small fw-semibold mb-2 d-none"
+          >
+            Pinned
+          </div>
+          <div id="pinnedGrid" class="masonry mb-3"></div>
+          <div
+            id="othersLabel"
+            class="text-uppercase text-muted small fw-semibold mb-2 d-none"
+          >
+            Others
+          </div>
+          <div id="mainGrid" class="masonry"></div>
+
+          <!-- empty state -->
+          <div id="emptyState" class="text-center text-muted py-5 d-none">
+            <i class="bi bi-lightbulb fs-1 d-block mb-2"></i>
+            <div id="emptyStateText">Notes you add appear here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

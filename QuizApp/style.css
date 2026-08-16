@@ -1,0 +1,26 @@
+/* Minimal custom styles — most styling comes from Bootstrap classes in HTML */
+
+body {
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 1rem;
+  border: none;
+}
+
+#options-container .btn {
+  text-align: left;
+}
+
+.option-correct {
+  background-color: #198754 !important;
+  color: #fff !important;
+  border-color: #198754 !important;
+}
+
+.option-wrong {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  border-color: #dc3545 !important;
+}
